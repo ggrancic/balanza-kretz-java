@@ -23,7 +23,6 @@ public class Conexion {
             //Class.forName(DRIVER);
             Connection c = DriverManager.getConnection(URL, USER, CLAVE);
             setCon(c);
-            System.out.println("Todo ok");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

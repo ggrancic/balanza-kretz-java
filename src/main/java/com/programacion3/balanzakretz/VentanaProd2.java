@@ -1,19 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package com.programacion3.balanzakretz;
 
 /**
  *
  * @author gian
  */
-public class VentanaProd extends javax.swing.JFrame {
+public class VentanaProd2 extends javax.swing.JFrame {
 
     /**
-     * Creates new form VentanaProd
+     * Creates new form VentanaProd2
      */
-    public VentanaProd() {
+    public VentanaProd2() {
         initComponents();
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,9 +35,6 @@ public class VentanaProd extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("PRODUCTOS");
-        setAlwaysOnTop(true);
-        setPreferredSize(new java.awt.Dimension(400, 250));
 
         pnlContainer.setPreferredSize(new java.awt.Dimension(400, 300));
 
@@ -105,27 +104,45 @@ public class VentanaProd extends javax.swing.JFrame {
                         .addComponent(jButton1)))
                 .addGap(18, 18, 18)
                 .addComponent(containerDataBD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
-        getContentPane().add(pnlContainer, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(pnlContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(pnlContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
-        setSize(new java.awt.Dimension(400, 250));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        ControladorProds contProd1 = new ControladorProds();
-        float pFinal = 0000.00f;
+        ControladorProds2 contProd2 = new ControladorProds2();
         String codBarBalanza = campoCB.getText().trim();
-        int peso = Integer.parseInt(codBarBalanza.substring(6,12));
+        String PFinal = codBarBalanza.substring(6,12);
+        PFinal = PFinal.replaceFirst("^0+(?!$)", "");
         Producto prod1 = new Producto();
-        
-        contProd1.buscarProducto(codBarBalanza, prod1);   
-        pFinal = (float) peso / 1000 * prod1.getPrecioPorKg();
-        
+
+        contProd2.buscarProducto(codBarBalanza, prod1);
+
         labelProd.setText(prod1.getNombre());
-        campoPrecio.setText(Float.toString(pFinal));
+        campoPrecio.setText(PFinal);
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
@@ -145,20 +162,20 @@ public class VentanaProd extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaProd2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaProd2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaProd2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaProd2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaProd().setVisible(true);
+                new VentanaProd2().setVisible(true);
             }
         });
     }

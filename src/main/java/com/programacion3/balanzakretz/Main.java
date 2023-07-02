@@ -6,6 +6,7 @@ package com.programacion3.balanzakretz;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        MainFrame fr1 = new MainFrame();
+        fr1.setVisible(true);
     }
 }
