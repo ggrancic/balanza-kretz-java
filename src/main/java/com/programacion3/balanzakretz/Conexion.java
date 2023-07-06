@@ -20,16 +20,10 @@ public class Conexion {
     
     public void conectar() {
         try {
-            //Class.forName(DRIVER);
             Connection c = DriverManager.getConnection(URL, USER, CLAVE);
             setCon(c);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
-    
-    public static void main(String[] args) {
-        Conexion c = new Conexion();
-        c.conectar();
     }
 }
